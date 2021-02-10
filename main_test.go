@@ -35,10 +35,21 @@ func TestConvert(t *testing.T) {
       t.Errorf("actual: %s\texpected: %s", actual, expected)
     }
   }
+}
 
+func TestParser(t *testing.T) {
+  expected := 1
 
-//   if err != nil {
-//     t.Errorf("unexpected error: %s", err)
-//   }
+  actual, err := parse([]string{"1"})
+
+  if err != nil {
+    t.Errorf("unexpected error: %s", err)
+  }
+
+  if actual != expected {
+    if actual != expected {
+      t.Errorf("actual: %d\texpected: %d", actual, expected)
+    }
+  }
 
 }

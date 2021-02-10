@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strconv"
 )
 
 var romanDic = map[int]string{
@@ -38,16 +39,20 @@ var decimalsDec = [...]int{
 }
 
 func main() {
-  d, err := parse(os.Args)
+  d, err := parse(os.Args[1:])
   check(err)
   fmt.Println(convert(d))
 }
 
 func parse(args []string) (int, error) {
-  return -1, fmt.Errorf("not implemented")
+  return strconv.Atoi(args[0])
 }
 
-func check(err error) {}
+func check(err error) {
+  if err != nil {
+    panic(err)
+  }
+}
 
 func convert(d int) (string) {
 
