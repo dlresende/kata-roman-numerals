@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 var romanDic = map[int]string{
   1000: "M",
@@ -35,9 +38,16 @@ var decimalsDec = [...]int{
 }
 
 func main() {
-
-  fmt.Println("hello")
+  d, err := parse(os.Args)
+  check(err)
+  fmt.Println(convert(d))
 }
+
+func parse(args []string) (int, error) {
+  return -1, fmt.Errorf("not implemented")
+}
+
+func check(err error) {}
 
 func convert(d int) (string) {
 
