@@ -6,3 +6,8 @@ Converts decimal into roman numbers.
 $ go build
 $ ./roman
 ```
+
+## Test
+```shell
+$ go test
+```
